@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timer_frame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alarmitem_bg"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginVertical="10dp"
+    android:layout_marginHorizontal="15dp"
+    android:padding="5dp"
+    android:foreground="@drawable/selector">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/medium_margin"
+        android:paddingBottom="@dimen/medium_margin">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/timer_progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="270dp"
+                android:layout_height="270dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/round_progresbar"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_drawle"
+                android:rotation="-90"
+                android:visibility="visible" />
+
+
+<!--            <ProgressBar-->
+<!--                android:id="@+id/timer_progressbar"-->
+<!--                style="?android:attr/progressBarStyleHorizontal"-->
+<!--                android:layout_width="270dp"-->
+<!--                android:layout_height="270dp"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:background="@drawable/round_progresbar"-->
+<!--                android:progressDrawable="@drawable/progress_drawle" />-->
+
+
+
+            <TextView
+                android:id="@+id/timer_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/totaltiem"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/lato_black"
+                android:gravity="center"
+                android:visibility="visible"
+                android:textColor="@color/text_color"
+                android:textSize="40dp"
+                tools:text="00:14:59" />
+
+
+            <com.simplemobiletools.commons.views.MyTextView
+                android:id="@+id/totaltiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/timer_reset"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/gothambook"
+                android:textColor="@color/text_color"
+                android:textSize="15dp"
+                android:visibility="visible"
+                tools:text="Total 15 minutes" />
+
+
+            <ImageView
+                android:id="@+id/timer_reset"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/timer_progressbar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:padding="@dimen/small_text_size"
+                android:src="@drawable/ic_reset_vector"
+                android:visibility="visible"
+                app:tint="@color/text_color" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/single_timer_delete"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_timer_delete"/>
+
+            <ImageView
+                android:id="@+id/timer_play_pause"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/medium_margin"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="5dp"
+                android:src="@drawable/ic_timer_play_vector"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/timer_reset"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

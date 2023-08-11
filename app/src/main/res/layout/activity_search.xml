@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary"
+    android:orientation="vertical"
+    tools:context="com.example.Activities.SearchActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        app:titleTextAppearance="@style/AppTheme.ActionBar.TitleTextStyle">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gothambook"
+            android:textColor="@color/text_color"
+            android:text="Search"
+            android:textSize="25dp" />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_toolbar"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/search_background"
+        android:orientation="horizontal"
+        android:paddingVertical="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/mTextLin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="6dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/gothambook"
+                android:gravity="center"
+                android:text="Search for a city"
+                android:textColor="@color/text_hint_color"
+                android:textColorHint="@color/white"
+                android:textSize="16dp"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/mSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:inputType="textCapSentences"
+            android:layoutDirection="rtl"
+            android:splitMotionEvents="true"
+            android:theme="@style/ThemeOverlay.SearchView"
+            app:closeIcon="@drawable/ic_close_vector"
+            app:iconifiedByDefault="true"
+            app:queryBackground="@android:color/transparent"
+            app:queryHint="Search"
+            app:searchIcon="@drawable/ic_search_icon" />
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/second_activity_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rel"
+        android:layout_marginTop="10dp"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/lottie_animation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rel"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_main"
+            android:layout_width="235dp"
+            android:layout_height="148dp"
+            app:lottie_speed="1"
+            app:lottie_rawRes="@raw/clock_search"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
+
+
+<!--        <com.airbnb.lottie.LottieAnimationView-->
+<!--            android:id="@+id/animationView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:lottie_autoPlay="true"-->
+<!--            app:lottie_loop="true"-->
+<!--            app:lottie_rawRes="@raw/clock_search" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gothambook"
+            android:layout_marginTop="40sp"
+            android:text="@string/Lorem_Ipsum_is_simplydummy"
+            android:textColor="@color/text_hint_color"
+            android:textSize="16sp">
+
+        </TextView>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:background="@color/color_primary"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    tools:context="com.example.Activities.SearchActivity">-->
+
+    <!--    <androidx.appcompat.widget.Toolbar-->
+    <!--        android:id="@+id/main_toolbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="?attr/actionBarSize"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_marginStart="0dp"-->
+    <!--        app:titleTextAppearance="@style/AppTheme.ActionBar.TitleTextStyle">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/toolbar_title"-->
+    <!--            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:fontFamily="@font/gothambook"-->
+    <!--            android:text="Search"-->
+    <!--            android:textSize="25dp" />-->
+    <!--    </androidx.appcompat.widget.Toolbar>-->
+
+
+    <!--        <RelativeLayout-->
+    <!--            android:id="@+id/rel"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:background="@drawable/search_background"-->
+    <!--            android:layout_marginHorizontal="15dp"-->
+    <!--            android:layout_marginTop="15dp"-->
+    <!--            android:padding="7dp"-->
+    <!--            android:layout_below="@id/main_toolbar"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--            <RelativeLayout-->
+    <!--                android:id="@+id/mTextLin"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal"-->
+    <!--                android:layout_centerInParent="true"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_marginVertical="6dp"-->
+    <!--                    android:layout_marginStart="20dp"-->
+    <!--                    android:gravity="center"-->
+    <!--                    android:fontFamily="@font/gothambook"-->
+    <!--                    android:text="Search for a city"-->
+    <!--                    android:textColor="@color/white"-->
+    <!--                    android:textColorHint="@color/white"-->
+    <!--                    android:textSize="16dp" />-->
+
+
+    <!--            </RelativeLayout>-->
+
+    <!--            <androidx.appcompat.widget.SearchView-->
+    <!--                android:id="@+id/mSearch"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentStart="true"-->
+    <!--                android:layout_centerInParent="true"-->
+    <!--                android:layoutDirection="rtl"-->
+    <!--                android:splitMotionEvents="true"-->
+    <!--                android:theme="@style/ThemeOverlay.SearchView"-->
+    <!--                app:closeIcon="@drawable/ic_search_add"-->
+    <!--                app:iconifiedByDefault="true"-->
+    <!--                app:queryHint="Search "-->
+    <!--                app:searchIcon="@drawable/ic_search_icon" />-->
+
+    <!--            <EditText-->
+    <!--                android:id="@+id/srch_txt"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_marginLeft="10dp"-->
+    <!--                android:layout_marginRight="10dp"-->
+    <!--                android:hint="Search Your Album"-->
+    <!--                android:imeOptions="actionDone"-->
+    <!--                android:maxLines="1"-->
+    <!--                android:paddingHorizontal="15dp"-->
+    <!--                android:singleLine="true"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textColorHint="@color/white"-->
+    <!--                android:textSize="13sp"-->
+    <!--                android:fontFamily="go"-->
+    <!--                android:visibility="gone" />-->
+    <!--        </RelativeLayout>-->
+
+    <!--    <com.simplemobiletools.commons.views.MyRecyclerView-->
+    <!--        android:id="@+id/select_time_zones_list"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_below="@id/rel"-->
+    <!--        android:clipToPadding="false"-->
+    <!--        android:scrollbars="vertical"-->
+    <!--        app:layoutManager="com.simplemobiletools.commons.views.MyLinearLayoutManager" />-->
+
+
+
+
+

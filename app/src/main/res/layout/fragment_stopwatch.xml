@@ -1,0 +1,160 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stopwatch_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_primary"
+    tools:context="com.example.fragments.StopwatchFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/stop_rel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearLayout"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/round_stopwatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="5dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBarCircle"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="270dp"
+                    android:layout_height="270dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/round_progresbar"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="100"
+                    android:progressDrawable="@drawable/progress_drawle"
+                    android:rotation="-90" />
+
+<!--                <ProgressBar-->
+<!--                    android:id="@+id/progressBarCircle"-->
+<!--                    style="?android:attr/progressBarStyleHorizontal"-->
+<!--                    android:layout_width="270dp"-->
+<!--                    android:layout_height="270dp"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:max="100"-->
+<!--                    android:progress="100"-->
+<!--                    android:background="@drawable/round_progresbar"-->
+<!--                    android:progressDrawable="@drawable/progress_drawle"-->
+<!--                    android:rotation="0" />-->
+
+
+                <!--                <com.mikhaellopez.circularprogressbar.CircularProgressBar-->
+                <!--                    android:id="@+id/circularProgressBar"-->
+                <!--                    android:layout_width="240dp"-->
+                <!--                    android:layout_height="240dp"-->
+                <!--                    app:cpb_background_progressbar_color="@color/tab_indicator_color"-->
+                <!--                    app:cpb_background_progressbar_width="10dp"-->
+                <!--                    app:cpb_progress="0"-->
+                <!--                    app:cpb_progress_direction="to_right"-->
+                <!--                    app:cpb_progressbar_color="@color/tab_background"-->
+                <!--                    app:cpb_progressbar_width="10dp"-->
+                <!--                    app:cpb_round_border="false" />-->
+
+                <com.simplemobiletools.commons.views.MyTextView
+                    android:id="@+id/stopwatch_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/progressBarCircle"
+                    android:layout_alignEnd="@+id/progressBarCircle"
+                    android:layout_alignBottom="@+id/progressBarCircle"
+                    android:layout_centerInParent="true"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="@dimen/normal_margin"
+                    android:fontFamily="@font/lato_black"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/small_margin"
+                    android:textColor="@color/text_color"
+                    android:textSize="40dp"
+                    tools:text="00:10:59" />
+
+
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stopwatch_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/round_stopwatch"
+                android:clipToPadding="false"
+                android:overScrollMode="ifContentScrolls"
+                android:scrollbars="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/stopwatch_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/stopwatch_play_pause"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:src="@drawable/ic_stopwatch_reset" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/stopwatch_play_pause"
+                style="@style/FloatingActionButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="25dp"
+                android:backgroundTint="@color/tab_indicator_color"
+                android:clickable="true"
+                android:scaleType="center"
+                android:src="@drawable/ic_play_vector"
+                android:visibility="visible"
+                app:fabCustomSize="85dp"
+                app:fabSize="auto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:maxImageSize="25dp" />
+
+
+            <ImageView
+                android:id="@+id/stopwatch_lap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/stopwatch_play_pause"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:src="@drawable/ic_stopwatch_timer"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

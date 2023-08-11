@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/Settings"
+        android:icon="@drawable/ic_nav_settings"
+        />
+
+    <item
+        android:id="@+id/rete_app"
+        android:title="@string/Rate_this_app"
+        android:icon="@drawable/ic_nav_rateus"
+       />
+
+    <item
+        android:id="@+id/share_friend"
+        android:title="@string/Share_with_friend"
+        android:icon="@drawable/ic_nav_share"
+       />
+
+    <item
+        android:id="@+id/contact_us"
+        android:title="@string/Contact_us"
+        android:icon="@drawable/ic_nav_contact"
+      />
+    <item
+        android:id="@+id/privacy_policy"
+        android:title="@string/Privacy_Policy"
+        android:icon="@drawable/ic_nav_privacy"
+       />
+    <item
+        android:id="@+id/ScreenSaver"
+        android:title="ScreenSaver"
+        />
+
+</menu>

@@ -1,0 +1,179 @@
+<resources>
+    <string name="app_name">New Clock</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="clock">Clock</string>
+    <string name="timer">Timer</string>
+    <string name="stopwatch">Stopwatch</string>
+    <string name="alarm">Alram</string>
+    <string name="p_m">PM</string>
+    <string name="a_m">AM</string>
+    <string name="alarm_warning">Please make sure the alarm works properly
+        before relying on it. It could misbehave due to system restrictions related to battery saving.</string>
+    <string name="ok">OK</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="today">Today</string>
+    <string name="every_day">Every day</string>
+    <string name="no_days_selected">No days selected</string>
+    <string name="time_remaining">Time remaining:\n%s</string>
+    <string name="unknown_error_occurred">An unknown error occurred</string>
+    <string name="no_post_notifications_permissions">Permission to post notifications is required</string>
+    <string name="no_app_found">No valid app found</string>
+    <string name="settings_exported_successfully">Settings exported successfully</string>
+    <string name="search">Search</string>
+    <string name="wrong_folder_selected">Wrong folder selected, please select path \'%s\'</string>
+    <string name="sd_card_usb_same">SD card and USB device paths cannot be the same</string>
+    <string name="wrong_root_selected">Wrong folder selected, please select the main folder of your SD card</string>
+    <string name="wrong_root_selected_usb">Wrong folder selected, please select the main folder of your USB device</string>
+    <string name="copy_failed">Could not copy the files</string>
+    <string name="copying">Copying…</string>
+    <string name="copying_success">Files copied successfully</string>
+    <string name="copying_success_one">File copied successfully</string>
+    <string name="copy_move_failed">An error occurred</string>
+    <string name="moving">Moving…</string>
+    <string name="moving_success">Files moved successfully</string>
+    <string name="moving_success_one">File moved successfully</string>
+    <string name="moving_success_partial">Some files could not be moved</string>
+    <string name="copying_success_partial">Some files could not be copied</string>
+    <string name="app_on_sd_card">You seem to have the app installed on an SD card, that makes the app widgets unavailable. You won\'t even see them on the list of available widgets.
+        It is a system limitation, so if you want to use the widgets, you have to move the app back on the internal storage.</string>
+    <string name="system_service_disabled">System service for selecting files and folders is unavailable</string>
+    <string name="monda_short">M</string>
+    <string name="tuesda_short">T</string>
+    <string name="wednesda_short">W</string>
+    <string name="thursda_short">T</string>
+    <string name="frida_short">F</string>
+    <string name="saturda_short">S</string>
+    <string name="sunda_short">S</string>
+    <string name="vibrate">Vibration</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_new_sound">Add a new sound</string>
+    <string name="remove">Remove</string>
+    <string name="enter">Enter</string>
+    <string name="lap">Lap</string>
+    <string name="time_zone">Time Zone</string>
+    <string name="snooze">Snooze</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="time_expired">Time expired</string>
+    <string name="timers_notification_msg">Timers are running</string>
+    <string name="timer_single_notification_label_msg">Timer for %s is running</string>
+    <string name="new_timer">New Timer</string>
+    <string name="swipe_right_to_dismiss">Swipe right to Dismiss, or left to Snooze</string>
+    <string name="digital_clock">Digital clock </string>
+    <string name="analogue_clock">Analogue clock </string>
+    <string name="deletion_confirmation">Are you sure you want to delete %s?</string>
+    <string name="proceed_with_deletion">Are you sure you want to proceed with the deletion?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="Are_you_sure_you_wan_to_delete">Are you sure delete this items</string>
+    <string name="sub_title">Ipsum is simply dummy text of the
+        printing and typesetting.</string>
+    <string name="Share_with_friend">Share with friend</string>
+    <string name="Contact_us">Contact us</string>
+    <string name="Privacy_Policy">Privacy Policy</string>
+    <string name="Settings">Settings</string>
+    <string name="Rate_this_app">Rate this app</string>
+    <string name="Lorem_Ipsum_is_simplydummy">Lorem Ipsum is simply dummy.</string>
+    <string name="Change_date_Time">Change date &amp; Time</string>
+    <string name="home_time_zone">Home time zone</string>
+    <string name="Display_time_with_Seconds">Display time with Seconds</string>
+
+
+    <dimen name="stopwatch_button_small_size">60dp</dimen>
+    <dimen name="timer_button_small_size">50dp</dimen>
+    <dimen name="timer_button_size">56dp</dimen>
+    <dimen name="stopwatch_button_size">64dp</dimen>
+    <dimen name="lap_time_size">80dp</dimen>
+    <dimen name="clock_text_size_smaller">60sp</dimen>
+    <dimen name="reminder_activity_title_size">32sp</dimen>
+    <dimen name="reminder_activity_text_size">26sp</dimen>
+    <dimen name="reminder_background_min_size">70dp</dimen>
+
+
+    <array name="week_days_short">
+        <item>@string/monda_short</item>
+        <item>@string/tuesda_short</item>
+        <item>@string/wednesda_short</item>
+        <item>@string/thursda_short</item>
+        <item>@string/frida_short</item>
+        <item>@string/saturda_short</item>
+        <item>@string/sunda_short</item>
+    </array>
+
+    <array name="next_alarm">
+        <item>@string/monda_shor</item>
+        <item>@string/tuesda_shor</item>
+        <item>@string/wednesda_shor</item>
+        <item>@string/thursda_shor</item>
+        <item>@string/frida_shor</item>
+        <item>@string/saturda_shor</item>
+        <item>@string/sunda_shor</item>
+    </array>
+
+
+    <array name="week_days">
+        <item>@string/monda_shor</item>
+        <item>@string/tuesda_shor</item>
+        <item>@string/wednesda_shor</item>
+        <item>@string/thursda_shor</item>
+        <item>@string/frida_shor</item>
+        <item>@string/saturda_shor</item>
+        <item>@string/sunda_shor</item>
+    </array>
+    <string name="monda_shor">Mon</string>
+    <string name="tuesda_shor">Tue</string>
+    <string name="wednesda_shor">Wed</string>
+    <string name="thursda_shor">Thu</string>
+    <string name="frida_shor">Fri</string>
+    <string name="saturda_shor">Sat</string>
+    <string name="sunda_shor">Sun</string>
+
+    <string-array name="months">
+        <item>@string/januar</item>
+        <item>@string/februar</item>
+        <item>@string/marc</item>
+        <item>@string/apri</item>
+        <item>@string/ma</item>
+        <item>@string/jun</item>
+        <item>@string/jul</item>
+        <item>@string/augus</item>
+        <item>@string/septembe</item>
+        <item>@string/octobe</item>
+        <item>@string/novembe</item>
+        <item>@string/decembe</item>
+    </string-array>
+
+    <string name="januar">Jan</string>
+    <string name="februar">Feb</string>
+    <string name="marc">Mac</string>
+    <string name="apri">Apr</string>
+    <string name="ma">May</string>
+    <string name="jun">Jun</string>
+    <string name="jul">Jul</string>
+    <string name="augus">Aug</string>
+    <string name="septembe">Sept</string>
+    <string name="octobe">Oct</string>
+    <string name="novembe">Nov</string>
+    <string name="decembe">Dec</string>
+
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+
+    <plurals name="timer_notification_msg">
+        <item quantity="one">%d timer is running</item>
+        <item quantity="other">%d timers are running</item>
+    </plurals>
+
+    <plurals name="delete_messages">
+        <item quantity="one">%d items</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+
+    <string name="word_join">and</string>
+    <string name="title_total_time">%s</string>
+    <string name="title_lap_time">%s</string>
+    <string name="title_lap_number" translatable="false">%d</string>
+
+
+</resources>

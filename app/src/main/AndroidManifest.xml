@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.newclock">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:node="remove" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Material3.Dark.NoActionBar"
+        tools:targetApi="31">
+        <activity
+            android:name="com.example.Activities.SettingActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="com.example.Activities.SearchActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <!-- <meta-data -->
+            <!-- android:name="android.appcompat.searchable" -->
+            <!-- android:resource="@xml/searchable"/> -->
+        </activity>
+        <activity
+            android:name="com.example.Activities.SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.Activities.ReminderActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+
+        </activity>
+        <activity
+            android:name="com.example.Activities.SimpleActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.Activities.SnoozeReminderActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <service android:name="com.example.javamodel.TimeZoneDLService" />
+        <service android:name="com.example.Service.SnoozeService" />
+        <service android:name="com.example.Service.TimerService" />
+<!--        <service android:name="com.example.Service.StopwatchService" />-->
+        <service android:name="com.example.Stopwatch.StopwatchService" />
+
+        <receiver android:name="com.example.receivers.AlarmReceiver" />
+        <receiver android:name="com.example.receivers.HideAlarmReceiver" />
+        <receiver android:name="com.example.receivers.HideTimerReceiver" />
+        <receiver
+            android:name="com.example.receivers.BootCompletedReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.example.receivers.UpdateWidgetReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.app.action.NEXT_ALARM_CLOCK_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.example.helpers.MyDigitalTimeWidgetProvider"
+            android:exported="true"
+            android:label="@string/digital_clock">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+            </intent-filter>
+
+            <!-- <meta-data -->
+            <!-- android:name="android.appwidget.provider" -->
+            <!-- android:resource="@xml/widget_digital_clock_info" /> -->
+        </receiver>
+        <receiver
+            android:name="com.example.helpers.MyAnalogueTimeWidgetProvider"
+            android:exported="true"
+            android:label="@string/analogue_clock">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+            </intent-filter>
+
+            <!-- <meta-data -->
+            <!-- android:name="android.appwidget.provider" -->
+            <!-- android:resource="@xml/widget_analogue_clock_info" /> -->
+        </receiver>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

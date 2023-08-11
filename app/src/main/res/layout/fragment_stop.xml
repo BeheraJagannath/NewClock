@@ -1,0 +1,106 @@
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/color_primary"
+        tools:context="com.example.fragments.StopFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearLayout"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical">
+
+            <com.example.Stopwatch.ProgressTextView
+                android:id="@+id/time"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginVertical="5dp" />
+
+            <ScrollView
+                android:id="@+id/lap_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/linearLayout"
+                android:fadingEdge="vertical"
+                android:fadingEdgeLength="16dp"
+                android:layout_marginVertical="8dp"
+                android:requiresFadingEdge="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/laps"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="16dp"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/toggle"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_stopwatch_reset" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/toggle"
+                style="@style/FloatingActionButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="25dp"
+                android:backgroundTint="@color/tab_indicator_color"
+                android:clickable="true"
+                android:scaleType="center"
+                android:src="@drawable/ic_play_vector"
+                android:visibility="visible"
+                app:fabCustomSize="85dp"
+                app:fabSize="auto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:maxImageSize="25dp" />
+
+            <ImageView
+                android:id="@+id/lap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/toggle"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:src="@drawable/ic_stopwatch_timer"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+
+
+</RelativeLayout>

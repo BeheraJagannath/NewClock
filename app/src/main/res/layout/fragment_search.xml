@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/color_primary"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <AnalogClock
+            android:id="@+id/analog"
+            android:layout_marginTop="16sp"
+            android:layout_width="150dp"
+            android:visibility="gone"
+            android:format12Hour="h:mm a"
+            android:format24Hour="k:mm a"
+            android:layout_centerInParent="true"
+            android:layout_height="150dp" />
+        <RelativeLayout
+            android:id="@+id/clock_time_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="@dimen/activity_margin">
+            <TextClock
+                android:id="@+id/clock_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_black"
+                android:format12Hour="h:mm"
+                android:format24Hour="k:mm"
+                android:gravity="start"
+                android:textColor="@color/text_color"
+                android:textSize="60sp"
+                tools:text="00:00" />
+
+            <TextClock
+                android:id="@+id/am_pm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/clock_time"
+                android:layout_toEndOf="@+id/clock_time"
+                android:format12Hour=" a"
+                android:format24Hour=" a"
+                android:layout_marginBottom="5dp"
+                android:text="AM"
+                android:textColor="@color/text_color"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/l"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ads"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextClock
+            android:id="@+id/clock_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gothambook"
+            android:format12Hour="EEE, MMM d"
+            android:format24Hour="EEE, MMM d"
+            android:gravity="start"
+            android:textColor="@color/text_color"
+            android:textSize="16dp"
+            tools:text="Mon, 1 January" />
+
+
+        <com.simplemobiletools.commons.views.MyTextView
+            android:id="@+id/clock_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clock_date"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:drawableLeft="@drawable/ic_alarm_vector"
+            android:drawablePadding="@dimen/small_margin"
+            android:drawableTint="@color/tab_indicator_color"
+            android:fontFamily="@font/gothambook"
+            android:gravity="center"
+            android:textColor="@color/text_color"
+            android:textSize="16dp"
+            tools:text="Thu, 6:16 PM" />
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_activity_List"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/l"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:overScrollMode="ifContentScrolls"
+        android:paddingBottom="70sp"
+        android:scrollbars="none"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/select_city_button"
+        style="@style/FloatingActionButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginStart="@dimen/activity_margin"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginEnd="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:backgroundTint="@color/tab_indicator_color"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_search_add" />
+
+</RelativeLayout>

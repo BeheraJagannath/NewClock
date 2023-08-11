@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Screen_relativelayout"
+    android:background="@color/color_primary"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+        <AnalogClock
+            android:id="@+id/Screen_analog"
+            android:layout_width="200dp"
+            android:visibility="gone"
+            android:format12Hour="h:mm a"
+            android:format24Hour="k:mm a"
+            android:layout_centerInParent="true"
+            android:layout_height="200dp" />
+        <RelativeLayout
+            android:id="@+id/Screen_digital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <TextClock
+                android:id="@+id/screen_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_black"
+                android:format12Hour="h:mm"
+                android:format24Hour="k:mm"
+                android:gravity="start"
+                android:textColor="@color/text_color"
+                android:textSize="60sp"
+                tools:text="00:00" />
+
+            <TextClock
+                android:id="@+id/screen_am_pm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/screen_time"
+                android:layout_toEndOf="@+id/screen_time"
+                android:format12Hour=" a"
+                android:format24Hour=" a"
+                android:layout_marginBottom="5dp"
+                android:text="AM"
+                android:textColor="@color/text_color"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
